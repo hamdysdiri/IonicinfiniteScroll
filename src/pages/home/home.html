@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      InfiniteScroll
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor=" let articles of products  ">
+    <ion-card>
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            {{articles.articleName}}
+          </ion-col>
+          <ion-col>
+            {{articles.price}}
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
+
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
